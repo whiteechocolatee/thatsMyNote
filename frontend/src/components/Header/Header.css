@@ -1,0 +1,22 @@
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+.header-navigation {
+  height: 70px;
+  background-color: wheat;
+}
+
+.header-navigation_btn {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  width: 800px;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.header-navigation_btn li {
+  list-style: none;
+}

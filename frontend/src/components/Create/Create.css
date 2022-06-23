@@ -1,0 +1,9 @@
+.hide {
+  display: none;
+}
+
+.note-form {
+  margin: 0 auto;
+  width: 60%;
+  height: 200px;
+}
