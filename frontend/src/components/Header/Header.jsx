@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Header.css'
 
 function Header() {
@@ -8,16 +8,16 @@ function Header() {
       <nav className='header-navigation'>
         <ul className='container header-navigation_btn'>
           <li>
-            <Link to='/'>Home</Link>
+            <NavLink to='/'>Home</NavLink>
           </li>
           <li>
-            <Link to='/about'>About</Link>
+            <NavLink to='/about'>About</NavLink>
           </li>
           <li>
-            <Link to='/create'>Create</Link>
+            <NavLink to='/create'>Create</NavLink>
           </li>
           <li>
-            <Link to='/note/'>Note</Link>
+            <NavLink to='/note/'>Note</NavLink>
           </li>
         </ul>
       </nav>

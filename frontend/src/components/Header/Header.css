@@ -5,7 +5,7 @@
 
 .header-navigation {
   height: 70px;
-  background-color: wheat;
+  background-color: #e3f2fd;
 }
 
 .header-navigation_btn {
@@ -19,4 +19,14 @@
 
 .header-navigation_btn li {
   list-style: none;
+}
+
+.header-navigation_btn li a {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  border-bottom: 2px solid black;
+  transition: 0.1s;
 }
