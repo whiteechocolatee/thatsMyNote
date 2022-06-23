@@ -19,9 +19,6 @@ function Header() {
           <li>
             <Link to='/note/'>Note</Link>
           </li>
-          <li>
-            <Link to='toTheErrorPage'>Lets see errors</Link>
-          </li>
         </ul>
       </nav>
     </div>

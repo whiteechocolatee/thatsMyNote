@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap");
+
+img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.concept {
+  position: relative;
+  padding: 5em;
+  overflow: hidden;
+  scroll-snap-align: center;
+  font-family: "Dosis", sans-serif;
+}
+
+.concept:hover:before {
+  opacity: 0.5;
+}
+
+.concept-six .word {
+  width: 550px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.concept-six .word .char:nth-child(4) {
+  margin: -25px 0 0;
+  transform: rotate(5deg);
+}
+
+.concept-six .word .char:nth-child(5) {
+  margin: -40px 5px 0;
+  transform: rotate(-10deg);
+}
+
+.concept-six .word .char:nth-child(6) {
+  margin-top: 0px;
+  transform: rotate(10deg);
+}
+
+.concept-six .word .char:nth-child(7) {
+  margin-top: -30px;
+  transform: rotate(45deg);
+}
+
+.concept-six .word .char:nth-child(8) {
+  margin-top: -30px;
+  transform: rotate(-45deg);
+}
+
+.concept-six .char {
+  flex: 1;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  font-size: 50px;
+  color: red;
+}
+
+.error-text {
+  text-align: center;
+}
