@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import env from '../../env.json'
+import { postNotes } from '../fetch/postNotes';
 import './Create.css'
 
 
@@ -15,15 +16,8 @@ function Create() {
   }
 
   const handleNote =(object)=>{
-    fetch(`${env.urlBackend}`,{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/x-www-form-urlencoded'
-      },
-      body:JSON.stringify(object)
-    })
-      .then(res=> res.json())
-      .then(data=> {
+      postNotes(object)
+        .then((data)=>{
           console.log('data res >>>',data.result);
           console.log('result url >>>',`${env.url}/${data.url}`);
           if(data.result){
@@ -31,7 +25,7 @@ function Create() {
           }
           setHideForm('hide')
           setHide('')
-      })
+        })
   }
 
   const handleForm = (e)=>{
