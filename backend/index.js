@@ -60,10 +60,12 @@ http.createServer((req, res) => {
                     .then(result => {
                         if (result) {
                             res.end(JSON.stringify({ 'result': true, "note": result.text }));
-                            // Notes.destroy({where: {id: result.id}}); // if you want delete message!!!
+                            setTimeout(()=>{
+                                Notes.destroy({where: {id: result.id}});
+                            },600000)
                         }
                         else {
-                            res.end(JSON.stringify({ 'result': false, "text": 'note not found' }));
+                            res.end(JSON.stringify({ 'result': false, "text": 'Заметка с таким hash не найдена' }));
                         }
                     })
                     .catch(err => {
@@ -73,5 +75,4 @@ http.createServer((req, res) => {
             }
         });
     }
-
 }).listen(3500);

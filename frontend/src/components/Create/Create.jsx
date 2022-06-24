@@ -10,13 +10,17 @@ function Create() {
   const {handleNotes} = fetching
 
   const[url,setUrl] = useState('');
-  const[hide,setHide] = useState('hide');
+  
+  const[lineClass,setLineClass] = useState('hide');
+  
+  const[textLength,setTextLength] = useState(1000);
+
   const[hideForm,setHideForm] = useState('row gy-2 gx-3 align-items-center');
 
 
   const handleNewNote = () =>{
     setHideForm('row gy-2 gx-3 align-items-center')
-    setHide('hide')
+    setLineClass('hide')
   }
 
   const handleNote =(obj)=>{
@@ -26,9 +30,10 @@ function Create() {
           setUrl(`${env.url}${data.url}`)
         }
         setHideForm('hide')
-        setHide('')
+        setLineClass('')
       })
   }
+
 
   const handleForm = (e)=>{
     e.preventDefault()
@@ -40,23 +45,33 @@ function Create() {
     note.value.trim()
     handleNote({'note':note.value})
     note.value = ''
+    setTextLength(1000)
+  }
+
+  const handleLength = (e) =>{
+    console.log(e.target.value);
+    let enteredNote = e.target.value;
+    setTextLength(1000-enteredNote.length)
   }
 
   return (
     <div className='note-form'>
         <form onSubmit={handleForm} className={hideForm}>
           <label htmlFor="note">Введите текст заметки:</label>
-          <textarea name="note" id="note" className="form-control" cols="60" placeholder='Введите текст заметки...' rows="3"></textarea>
+          <textarea name="note" onChange={handleLength} id="note"  className="form-control shadow p-3 mb-5 bg-body rounded" cols="60" placeholder='Введите текст заметки...' rows="5"></textarea>
+          <label><b>Примечание!</b> Длинна сообщения не должна привышать 1000 символов.</label>
+          <label>Осталось : {textLength}</label>
           <div className="col-auto">
-            <button type="submit" className="btn btn-primary">Создать</button>
+            <button type="submit" className="btn btn-outline-success">Создать</button>
           </div>
         </form>
-        <div className={hide}>
-          <div>
-            {url}
+        <div className={lineClass}>
+          <div className='show-hash'>
+            <b>{url}</b>
+            <span>Скопируйте URL и отправьте адресату</span>
           </div>
-          <div className="">
-            <button onClick={handleNewNote} className="btn btn-primary">Создать новую заметку</button>
+          <div className='d-grid gap-2 d-md-flex justify-content-md-end'>
+            <button onClick={handleNewNote} className="new-note btn btn-outline-success">Создать новую заметку</button>
           </div>
         </div>
     </div>

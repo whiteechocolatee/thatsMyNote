@@ -1,0 +1,19 @@
+.note-btns {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.note-desc {
+  margin-top: 150px;
+}
+
+.note-p {
+  margin-top: 15px;
+}
+
+.note-instruction {
+  margin: 20px;
+}

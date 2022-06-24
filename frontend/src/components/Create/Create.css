@@ -1,5 +1,19 @@
-.note-form {
-  margin: 0 auto;
-  width: 60%;
-  height: 200px;
+#note {
+  resize: none;
+}
+
+.show-hash {
+  height: 80px;
+  background-color: #D1D4ED;
+  border: #7380ED 2px solid;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.new-note{
+  margin: 10px;
 }

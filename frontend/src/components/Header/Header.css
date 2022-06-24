@@ -4,29 +4,5 @@
 }
 
 .header-navigation {
-  height: 70px;
-  background-color: #e3f2fd;
-}
-
-.header-navigation_btn {
-  height: 100%;
-  align-items: center;
-  display: flex;
-  width: 800px;
-  margin: 0 auto;
-  justify-content: space-around;
-}
-
-.header-navigation_btn li {
-  list-style: none;
-}
-
-.header-navigation_btn li a {
-  text-decoration: none;
-  color: black;
-}
-
-.active {
-  border-bottom: 2px solid black;
-  transition: 0.1s;
+  background-color: #68c0ff;
 }

@@ -11,3 +11,13 @@ body {
 .hide {
   display: none;
 }
+
+.note-form {
+  margin: 0 auto;
+  width: 60%;
+  height: 200px;
+}
+
+.nav-item {
+  z-index: 999;
+}
