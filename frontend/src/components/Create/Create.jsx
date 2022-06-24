@@ -6,8 +6,6 @@ import './Create.css'
 
 
 function Create() {
-
-  console.log(fetching);
   /* Destructuring the object. */
   const {handleNotes} = fetching
 
@@ -39,6 +37,7 @@ function Create() {
       alert('Напишите что-то!')
       return false
     }
+    note.value.trim()
     handleNote({'note':note.value})
     note.value = ''
   }
