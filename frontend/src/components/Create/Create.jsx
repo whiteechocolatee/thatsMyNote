@@ -1,41 +1,46 @@
 import React from 'react'
 import { useState } from 'react'
 import env from '../../env.json'
-import { postNotes } from '../fetch/postNotes';
+import fetching from '../fetch/fetchObj';
 import './Create.css'
 
 
 function Create() {
 
+  console.log(fetching);
+  /* Destructuring the object. */
+  const {handleNotes} = fetching
+
   const[url,setUrl] = useState('');
   const[hide,setHide] = useState('hide');
   const[hideForm,setHideForm] = useState('row gy-2 gx-3 align-items-center');
 
+
   const handleNewNote = () =>{
-    window.location.reload()
+    setHideForm('row gy-2 gx-3 align-items-center')
+    setHide('hide')
   }
 
-  const handleNote =(object)=>{
-      postNotes(object)
-        .then((data)=>{
-          console.log('data res >>>',data.result);
-          console.log('result url >>>',`${env.url}/${data.url}`);
-          if(data.result){
-            setUrl(`${env.url}${data.url}`)
-          }
-          setHideForm('hide')
-          setHide('')
-        })
+  const handleNote =(obj)=>{
+    handleNotes(obj)
+      .then((data)=>{
+        if(data.result){
+          setUrl(`${env.url}${data.url}`)
+        }
+        setHideForm('hide')
+        setHide('')
+      })
   }
 
   const handleForm = (e)=>{
     e.preventDefault()
-    let note = e.target.elements.note.value
-    if(note.length === 0 ){
+    let note = e.target.elements.note
+    if(note.value.length === 0 ){
       alert('Напишите что-то!')
       return false
     }
-    handleNote({'note':note})
+    handleNote({'note':note.value})
+    note.value = ''
   }
 
   return (
