@@ -7,3 +7,7 @@ body {
 .main-content {
   margin: 50px auto;
 }
+
+.hide {
+  display: none;
+}
