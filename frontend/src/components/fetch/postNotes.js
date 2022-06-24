@@ -1,6 +1,6 @@
 import env from '../../env.json'
 
-export const postNotes = async (obj) =>{
+export const notes = async (obj) =>{
     try{
         let response = await fetch(`${env.urlBackend}`,{
                 method:'POST',
@@ -9,8 +9,9 @@ export const postNotes = async (obj) =>{
                 },
                 body:JSON.stringify(obj)
             })
-        console.log('response >>>',response);
+
         let data = await response.json();
+
         return data
     }catch(err){
         console.log(err);

@@ -1,9 +1,8 @@
-import { postNotes } from "./postNotes";
+import { notes } from "./postNotes";
 
 let fetching = {
-    postNotes : postNotes,
-    // getNotes : getNotes()
+    handleNotes:notes
 }
 
 
-export {postNotes} 
+export default fetching
