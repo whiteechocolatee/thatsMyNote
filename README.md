@@ -1,6 +1,6 @@
 # thatsMyNote project 📩
 
-Was written for two days for learning react and additiona; library react-router-dom, and how react working with backend (node.js + sequlize)
+Was written for two days for learning react and additional library react-router-dom, and how react working with backend (node.js + sequlize)
 
 So, in this service you can write something to your friend, and he can see what you sent. 👀
 
